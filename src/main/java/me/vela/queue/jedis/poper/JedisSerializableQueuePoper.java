@@ -3,6 +3,7 @@
  */
 package me.vela.queue.jedis.poper;
 
+import java.io.Serializable;
 import java.util.function.Supplier;
 
 import org.apache.commons.lang3.SerializationUtils;
@@ -12,7 +13,8 @@ import redis.clients.jedis.ShardedJedisPool;
 /**
  * @author w.vela
  */
-public class JedisSerializableQueuePoper<E> extends AbsJedisQueuePoper<byte[], E, byte[]> {
+public class JedisSerializableQueuePoper<E extends Serializable> extends
+        AbsJedisQueuePoper<byte[], E, byte[]> {
 
     private static final int DEFAULT_WAIT = 2;
 

@@ -6,8 +6,6 @@ package me.vela.queue.jedis.poper;
 import java.io.IOException;
 import java.util.function.Supplier;
 
-import org.w3c.dom.events.Event;
-
 import redis.clients.jedis.ShardedJedisPool;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -16,7 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * @author w.vela
  */
-public class JedisJsonPoper<E extends Event> extends AbsJedisQueuePoper<String, E, String> {
+public class JedisJsonPoper<E> extends AbsJedisQueuePoper<String, E, String> {
 
     private static final int WAIT = 2;
 
