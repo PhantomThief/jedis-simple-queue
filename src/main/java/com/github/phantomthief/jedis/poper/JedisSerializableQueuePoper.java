@@ -1,7 +1,7 @@
 /**
  * 
  */
-package me.vela.queue.jedis.poper;
+package com.github.phantomthief.jedis.poper;
 
 import java.io.Serializable;
 import java.util.function.Supplier;

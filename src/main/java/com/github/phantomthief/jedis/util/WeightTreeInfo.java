@@ -1,20 +1,18 @@
 /**
  * 
  */
-package me.vela.queue.jedis.util;
+package com.github.phantomthief.jedis.util;
 
 import org.apache.commons.lang3.RandomUtils;
 
-import com.google.common.collect.Multiset;
 import com.google.common.collect.Range;
 import com.google.common.collect.RangeMap;
-import com.google.common.collect.TreeMultiset;
 import com.google.common.collect.TreeRangeMap;
 
 /**
  * 带权重的树
  * 
- * @author w.vela <wangtianzhou@diandian.com>
+ * @author w.vela
  * @param <T>
  */
 public class WeightTreeInfo<T> {
@@ -42,19 +40,6 @@ public class WeightTreeInfo<T> {
         WeightTreeInfo<T> result = new WeightTreeInfo<>();
         result.putNode(one, DEFAULT_WEIGHT);
         return result;
-    }
-
-    public static void main(String[] args) {
-        WeightTreeInfo<String> aInfo = new WeightTreeInfo<String>();
-        aInfo.putNode("test1", 10);
-        aInfo.putNode("test2", 40);
-        aInfo.putNode("test3", 50);
-        long t = System.currentTimeMillis();
-        Multiset<String> result = TreeMultiset.create();
-        for (int i = 0; i < 100000; i++) {
-            result.add(aInfo.getNode());
-        }
-        System.out.println(result + ", cost:" + (System.currentTimeMillis() - t));
     }
 
     @Override

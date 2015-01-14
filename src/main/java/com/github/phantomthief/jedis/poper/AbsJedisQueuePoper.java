@@ -1,7 +1,7 @@
 /**
  * 
  */
-package me.vela.queue.jedis.poper;
+package com.github.phantomthief.jedis.poper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,9 +12,9 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import me.vela.queue.jedis.util.WeightTreeInfo;
-
 import org.apache.commons.lang3.RandomUtils;
+
+import com.github.phantomthief.jedis.util.WeightTreeInfo;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.ShardedJedis;

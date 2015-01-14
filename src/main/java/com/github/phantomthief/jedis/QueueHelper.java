@@ -1,7 +1,7 @@
 /**
  * 
  */
-package me.vela.queue.jedis;
+package com.github.phantomthief.jedis;
 
 import java.util.ArrayList;
 import java.util.Arrays;
