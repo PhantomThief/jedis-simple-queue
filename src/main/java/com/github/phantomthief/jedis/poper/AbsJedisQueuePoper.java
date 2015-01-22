@@ -14,11 +14,11 @@ import java.util.function.Supplier;
 
 import org.apache.commons.lang3.RandomUtils;
 
-import com.github.phantomthief.jedis.util.WeightTreeInfo;
-
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.ShardedJedis;
 import redis.clients.jedis.ShardedJedisPool;
+
+import com.github.phantomthief.jedis.util.WeightTreeInfo;
 
 /**
  * @author w.vela
@@ -112,8 +112,13 @@ public abstract class AbsJedisQueuePoper<K, E, R> implements Supplier<E> {
 
     @Override
     public String toString() {
-        return "AbsJedisQueuePoper [queueKey=" + queueKey + ", poper=" + poper + ", decoder="
-                + decoder + "]";
+        if (queueKey instanceof byte[]) {
+            return "AbsJedisQueuePoper [queueKey=" + new String((byte[]) queueKey) + ", poper="
+                    + poper + ", decoder=" + decoder + "]";
+        } else {
+            return "AbsJedisQueuePoper [queueKey=" + queueKey + ", poper=" + poper + ", decoder="
+                    + decoder + "]";
+        }
     }
 
 }
