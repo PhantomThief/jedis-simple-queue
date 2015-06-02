@@ -11,11 +11,11 @@ import redis.clients.jedis.ShardedJedisPool;
 /**
  * @author w.vela
  */
-public class JedisStringQueuePoper extends AbsJedisQueuePoper<String, String, String> {
+public class JedisByteArrayQueuePoper extends AbsJedisQueuePoper<byte[], byte[], byte[]> {
 
     private static final int DEFAULT_WAIT = 2;
 
-    public JedisStringQueuePoper(String queueKey, Supplier<ShardedJedisPool> jedisFactory) {
+    public JedisByteArrayQueuePoper(byte[] queueKey, Supplier<ShardedJedisPool> jedisFactory) {
         this(queueKey, jedisFactory, DEFAULT_WAIT);
     }
 
@@ -24,7 +24,7 @@ public class JedisStringQueuePoper extends AbsJedisQueuePoper<String, String, St
      * @param jedisFactory
      * @param wait
      */
-    public JedisStringQueuePoper(String queueKey, Supplier<ShardedJedisPool> jedisFactory,
+    public JedisByteArrayQueuePoper(byte[] queueKey, Supplier<ShardedJedisPool> jedisFactory,
             int wait) {
         super(queueKey, jedisFactory, (j, k) -> j.brpop(wait, k), Function.identity());
     }

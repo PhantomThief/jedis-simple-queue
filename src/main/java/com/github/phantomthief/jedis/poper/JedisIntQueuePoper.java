@@ -12,7 +12,7 @@ import redis.clients.jedis.ShardedJedisPool;
 /**
  * @author w.vela
  */
-public class JedisIntQueuePoper<E> extends AbsJedisQueuePoper<String, Integer, String> {
+public class JedisIntQueuePoper extends AbsJedisQueuePoper<String, Integer, String> {
 
     private static final int DEFAULT_WAIT = 2;
 
